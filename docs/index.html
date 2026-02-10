@@ -10,18 +10,46 @@
     <meta property="og:description" content="We assemble power, cooling, clean energy, and modular data center ecosystems into integrated, bankable solutions.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.mkacriticalpowers.com">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230A1628'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='700' font-size='14' fill='%230066FF'%3EMKA%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <span class="logo-mark">MKA</span>
-                <span class="logo-text">Critical Power</span>
+            <a href="#" class="logo" aria-label="MKA Critical Power Home">
+                <div class="logo-icon">
+                    <!-- SVG Logo: angular power/circuit motif -->
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="46" height="46" rx="6" stroke="#0066FF" stroke-width="2"/>
+                        <path d="M14 14h6v6h-6z" fill="#0066FF" opacity="0.3"/>
+                        <path d="M28 14h6v6h-6z" fill="#0066FF" opacity="0.3"/>
+                        <path d="M14 28h6v6h-6z" fill="#0066FF" opacity="0.3"/>
+                        <path d="M28 28h6v6h-6z" fill="#0066FF" opacity="0.3"/>
+                        <!-- Power bolt through center -->
+                        <path d="M26 10L20 24h6l-4 14" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Circuit traces -->
+                        <line x1="10" y1="17" x2="14" y2="17" stroke="#0066FF" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="34" y1="17" x2="38" y2="17" stroke="#0066FF" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="10" y1="31" x2="14" y2="31" stroke="#0066FF" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="34" y1="31" x2="38" y2="31" stroke="#0066FF" stroke-width="1.5" opacity="0.5"/>
+                        <!-- Corner nodes -->
+                        <circle cx="10" cy="17" r="2" fill="#0066FF" opacity="0.6"/>
+                        <circle cx="38" cy="17" r="2" fill="#0066FF" opacity="0.6"/>
+                        <circle cx="10" cy="31" r="2" fill="#0066FF" opacity="0.6"/>
+                        <circle cx="38" cy="31" r="2" fill="#0066FF" opacity="0.6"/>
+                    </svg>
+                </div>
+                <div class="logo-type">
+                    <span class="logo-name">MKA</span>
+                    <span class="logo-tagline">CRITICAL POWER</span>
+                </div>
             </a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#services">Services</a></li>
@@ -40,78 +68,127 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-bg-grid"></div>
+        <div class="hero-gradient-orb hero-orb-1"></div>
+        <div class="hero-gradient-orb hero-orb-2"></div>
+        <div class="hero-grid-overlay"></div>
         <div class="container hero-container">
             <div class="hero-content">
-                <div class="hero-badge">Strategic Infrastructure Integration</div>
-                <h1>AI Data Center Infrastructure.<br><span class="accent">Architected.</span></h1>
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Strategic Infrastructure Integration
+                </div>
+                <h1>
+                    <span class="hero-line-1">AI Data Center</span>
+                    <span class="hero-line-2">Infrastructure.</span>
+                    <span class="hero-line-3 accent-glow">Architected.</span>
+                </h1>
                 <p class="hero-sub">MKA Critical Power assembles power, cooling, clean energy, and modular data center ecosystems into integrated, bankable solutions for enterprise, federal, and investment buyers.</p>
                 <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">Book a Strategy Call</a>
-                    <a href="#services" class="btn btn-outline">See How We Work</a>
+                    <a href="#contact" class="btn btn-primary">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        Book a Strategy Call
+                    </a>
+                    <a href="#services" class="btn btn-outline">
+                        See How We Work
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>Federal-Cleared Operations</span>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <span>$840M+ Pipeline Built</span>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span>Built in Under 12 Months</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-node-diagram">
-                    <div class="node node-center">
-                        <span>MKA</span>
+                <div class="hero-power-ring">
+                    <div class="ring ring-outer"></div>
+                    <div class="ring ring-middle"></div>
+                    <div class="ring ring-inner"></div>
+                    <div class="ring-center">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="ring-logo">
+                            <path d="M26 8L18 26h8l-4 16" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="ring-label">MKA</span>
                     </div>
-                    <div class="node node-1">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    <!-- Orbiting nodes -->
+                    <div class="orbit-node orbit-1">
+                        <div class="orbit-dot"></div>
                         <span>Power</span>
                     </div>
-                    <div class="node node-2">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c-4.97 0-9 3.13-9 7s4.03 7 9 7c.85 0 1.68-.1 2.46-.28L20 21v-5.04A6.97 6.97 0 0021 10c0-3.87-4.03-7-9-7z"/></svg>
+                    <div class="orbit-node orbit-2">
+                        <div class="orbit-dot"></div>
                         <span>Cooling</span>
                     </div>
-                    <div class="node node-3">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/></svg>
+                    <div class="orbit-node orbit-3">
+                        <div class="orbit-dot"></div>
                         <span>Clean Energy</span>
                     </div>
-                    <div class="node node-4">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+                    <div class="orbit-node orbit-4">
+                        <div class="orbit-dot"></div>
                         <span>Compute</span>
                     </div>
-                    <div class="node node-5">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <div class="orbit-node orbit-5">
+                        <div class="orbit-dot"></div>
                         <span>Compliance</span>
                     </div>
-                    <svg class="node-lines" viewBox="0 0 400 400">
-                        <line x1="200" y1="200" x2="200" y2="40" class="connector"/>
-                        <line x1="200" y1="200" x2="355" y2="120" class="connector"/>
-                        <line x1="200" y1="200" x2="355" y2="300" class="connector"/>
-                        <line x1="200" y1="200" x2="45" y2="300" class="connector"/>
-                        <line x1="200" y1="200" x2="45" y2="120" class="connector"/>
-                    </svg>
                 </div>
             </div>
         </div>
         <div class="hero-scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
         </div>
     </section>
 
     <!-- Proof / Metrics Bar -->
     <section class="metrics" id="proof">
         <div class="container">
+            <div class="metrics-header">
+                <div class="section-badge">Proven Results</div>
+                <h2>Built. Closed. <span class="accent">Delivered.</span></h2>
+            </div>
             <div class="metrics-grid">
                 <div class="metric-card">
+                    <div class="metric-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    </div>
                     <div class="metric-number" data-target="390">$390K+</div>
                     <div class="metric-label">Critical Power Equipment Closed</div>
                     <div class="metric-detail">MARTA Atlanta, Trinity River Authority TX</div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card metric-card-featured">
+                    <div class="metric-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
                     <div class="metric-number" data-target="840">$840M+</div>
                     <div class="metric-label">Federal Pipeline Assembled</div>
                     <div class="metric-detail">DOE National Laboratory AI Data Center Projects</div>
                 </div>
                 <div class="metric-card">
+                    <div class="metric-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
                     <div class="metric-number" data-target="5">5+</div>
                     <div class="metric-label">Emerging Tech Companies Onboarded</div>
                     <div class="metric-detail">Into the U.S. Federal Market</div>
                 </div>
                 <div class="metric-card">
+                    <div class="metric-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
                     <div class="metric-number" data-target="280">$280M</div>
                     <div class="metric-label">Federal Consortium Built</div>
                     <div class="metric-detail">From Scratch in Under 12 Months</div>
@@ -126,11 +203,12 @@
             <div class="section-header">
                 <div class="section-badge">What We Do</div>
                 <h2>Three Ways We Build<br><span class="accent">Infrastructure Ecosystems</span></h2>
-                <p class="section-sub">Companies have pieces — a UPS, a cooling system, a reactor, a modular DC. Buyers need integrated solutions. We assemble these into first-of-kind ecosystems, navigate federal procurement, match off-takers, and close deals.</p>
+                <p class="section-sub">Companies have pieces. Buyers need integrated solutions. We assemble these into first-of-kind ecosystems, navigate federal procurement, match off-takers, and close deals.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-number">01</div>
+                    <div class="service-icon-wrap">
                         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
                             <circle cx="24" cy="24" r="6"/>
                             <circle cx="10" cy="10" r="4"/>
@@ -150,9 +228,13 @@
                         <span class="service-tag">Federal Primes</span>
                         <span class="service-tag">AI Infra Buyers</span>
                     </div>
+                    <div class="service-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="service-card service-card-featured">
+                    <div class="service-number">02</div>
+                    <div class="service-icon-wrap">
                         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M24 4L4 14v20l20 10 20-10V14L24 4z"/>
                             <path d="M4 14l20 10m0 0l20-10M24 24v20"/>
@@ -166,9 +248,13 @@
                         <span class="service-tag">Emerging Tech</span>
                         <span class="service-tag">Clean Energy Startups</span>
                     </div>
+                    <div class="service-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-number">03</div>
+                    <div class="service-icon-wrap">
                         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
                             <rect x="8" y="6" width="32" height="36" rx="2"/>
                             <path d="M16 16h16M16 24h16M16 32h8"/>
@@ -182,7 +268,42 @@
                         <span class="service-tag">PE/VC Firms</span>
                         <span class="service-tag">National Labs</span>
                     </div>
+                    <div class="service-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee / Social Proof -->
+    <section class="proof-strip">
+        <div class="proof-strip-inner">
+            <div class="proof-marquee">
+                <span class="marquee-item">DOE National Laboratories</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">Department of Defense</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">Hyperscale Data Centers</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">MARTA Atlanta</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">Trinity River Authority TX</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">Federal AI Infrastructure</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">DOE National Laboratories</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">Department of Defense</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">Hyperscale Data Centers</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">MARTA Atlanta</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">Trinity River Authority TX</span>
+                <span class="marquee-divider"></span>
+                <span class="marquee-item">Federal AI Infrastructure</span>
+                <span class="marquee-divider"></span>
             </div>
         </div>
     </section>
@@ -198,7 +319,12 @@
             <div class="ecosystem-diagram">
                 <div class="eco-flow">
                     <div class="eco-stage eco-input">
-                        <h4>Scattered Technologies</h4>
+                        <div class="eco-stage-header">
+                            <div class="eco-stage-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                            </div>
+                            <h4>Scattered Technologies</h4>
+                        </div>
                         <div class="eco-items">
                             <div class="eco-item">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
@@ -225,13 +351,23 @@
                     <div class="eco-arrow">
                         <div class="eco-arrow-line"></div>
                         <div class="eco-arrow-label">
-                            <div class="eco-arrow-logo">MKA</div>
-                            <span>Ecosystem<br>Architecture</span>
+                            <div class="eco-arrow-logo-wrap">
+                                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                                    <path d="M18 6L12 18h6l-3 10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <span class="eco-arrow-brand">MKA</span>
+                            <span class="eco-arrow-sub">Ecosystem<br>Architecture</span>
                         </div>
                         <div class="eco-arrow-line"></div>
                     </div>
                     <div class="eco-stage eco-output">
-                        <h4>Bankable Solutions</h4>
+                        <div class="eco-stage-header">
+                            <div class="eco-stage-icon eco-stage-icon-blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <h4>Bankable Solutions</h4>
+                        </div>
                         <div class="eco-items">
                             <div class="eco-item eco-item-result">
                                 <span>Integrated AI-Ready Data Centers</span>
@@ -249,7 +385,7 @@
                     </div>
                 </div>
                 <div class="eco-buyers">
-                    <h4>Buyers</h4>
+                    <h4>Who Buys</h4>
                     <div class="buyer-tags">
                         <span class="buyer-tag">Hyperscalers</span>
                         <span class="buyer-tag">DOE / DoD</span>
@@ -267,55 +403,78 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-content">
-                    <div class="section-badge">About</div>
+                    <div class="section-badge">About the Architect</div>
                     <h2>Michael Archie</h2>
                     <p class="about-title">Founder &amp; Chief Ecosystem Architect</p>
-                    <p>I build the infrastructure ecosystems that AI factories and HPC data centers need to actually get built.</p>
-                    <p>Most companies in this space have a piece of the puzzle — a UPS, a cooling solution, a transformer, a micro-reactor, a modular data center. What they don't have is someone who sees how all of those pieces integrate into a single, deployable, bankable system. That's what I do.</p>
+                    <p class="about-lead">I build the infrastructure ecosystems that AI factories and HPC data centers need to actually get built.</p>
+                    <p>Michael Archie is a strategic infrastructure architect and ecosystem builder operating at the intersection of AI data centers, critical power systems, and federal technology procurement. Based in Coral Gables, Florida, he founded MKA Critical Power to solve a problem no one else was addressing: the massive gap between emerging infrastructure technologies and the integrated, bankable solutions that enterprise and government buyers actually need.</p>
+                    <p>With a background spanning business development, federal contracting, and energy infrastructure, Michael brings a rare combination of technical fluency and deal-making expertise. He has spent his career connecting the dots between power generation, cooling systems, modular compute, and clean energy — assembling them into deployable ecosystems that can withstand federal scrutiny and attract institutional capital.</p>
+                    <p>His approach is built on direct relationships with OEMs, national laboratory leaders, defense primes, and PE/VC investors. Michael doesn't just broker introductions — he architects the entire ecosystem from technology selection through consortium formation to deal closure.</p>
                     <div class="about-achievements">
                         <div class="achievement">
                             <div class="achievement-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
-                            <span>Closed $390K+ in critical power equipment sales</span>
+                            <span>Closed $390K+ in critical power equipment sales (MARTA Atlanta, Trinity River Authority TX)</span>
                         </div>
                         <div class="achievement">
                             <div class="achievement-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
-                            <span>Assembled consortium targeting $840M+ in DOE AI data center projects</span>
+                            <span>Assembled consortium targeting $840M+ in DOE National Laboratory AI data center projects</span>
                         </div>
                         <div class="achievement">
                             <div class="achievement-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Built a $280M federal consortium from scratch in under 12 months</span>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <span>Onboarded 5+ emerging tech companies into the U.S. federal market</span>
                         </div>
                         <div class="achievement">
                             <div class="achievement-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <span>Built first-of-kind alliances combining micro-nuclear, liquid cooling, hybrid transformers, and modular DC</span>
                         </div>
                         <div class="achievement">
                             <div class="achievement-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <span>Presented AI infrastructure blueprints to former Stargate CTO</span>
                         </div>
                     </div>
-                    <p class="about-closing">MKA Critical Power exists because the AI infrastructure race isn't won by individual technologies — it's won by integrated ecosystems with trusted architecture behind them.</p>
                 </div>
                 <div class="about-visual">
-                    <div class="about-photo-placeholder">
-                        <div class="photo-frame">
-                            <div class="photo-initials">MA</div>
-                            <div class="photo-label">Michael Archie</div>
-                            <div class="photo-sublabel">Founder &amp; Chief Ecosystem Architect</div>
+                    <div class="about-card">
+                        <div class="about-card-glow"></div>
+                        <div class="about-photo-wrap">
+                            <img src="mike-archie.jpg" alt="Michael Archie — Founder of MKA Critical Power" class="about-headshot" loading="lazy">
+                        </div>
+                        <div class="about-card-info">
+                            <h4>Michael Archie</h4>
+                            <p>Founder &amp; Chief Ecosystem Architect</p>
+                        </div>
+                        <div class="about-card-links">
+                            <a href="https://www.linkedin.com/in/michael-archie/" target="_blank" rel="noopener" class="about-social-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                LinkedIn
+                            </a>
+                            <a href="mailto:mike@mkacriticalpowers.com" class="about-social-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                Email
+                            </a>
                         </div>
                     </div>
                     <div class="about-quote">
-                        <blockquote>"Companies have pieces. Buyers need integrated solutions. We assemble these into first-of-kind ecosystems and close the deals to make them real."</blockquote>
+                        <blockquote>
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32" class="quote-icon"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z"/></svg>
+                            "Companies have pieces. Buyers need integrated solutions. We assemble these into first-of-kind ecosystems and close the deals to make them real."
+                        </blockquote>
                     </div>
                 </div>
             </div>
@@ -324,21 +483,35 @@
 
     <!-- CTA Section -->
     <section class="cta" id="contact">
+        <div class="cta-bg-lines"></div>
         <div class="container">
             <div class="cta-content">
+                <div class="cta-logo-mark">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="60" height="60" rx="8" stroke="#0066FF" stroke-width="2" opacity="0.3"/>
+                        <path d="M34 14L24 34h10l-6 18" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
                 <h2>Ready to Architect Your<br><span class="accent">Infrastructure Ecosystem?</span></h2>
                 <p>Whether you're deploying AI infrastructure, entering the U.S. market, or investing in critical power — let's talk.</p>
                 <div class="cta-actions">
-                    <a href="mailto:mike@mkacriticalpowers.com" class="btn btn-primary btn-large">Book a 20-Minute Strategy Call</a>
+                    <a href="mailto:mike@mkacriticalpowers.com" class="btn btn-primary btn-large">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        Book a 20-Minute Strategy Call
+                    </a>
                 </div>
                 <div class="cta-details">
                     <div class="cta-detail">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.36 1.6.68 2.35a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.75.32 1.54.55 2.35.68A2 2 0 0122 16.92z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6m3-3h-6"/></svg>
                         <span>Direct consultation with Michael Archie</span>
                     </div>
                     <div class="cta-detail">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                         <span>20-minute strategy call — no pitch, just architecture</span>
+                    </div>
+                    <div class="cta-detail">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>Federal-cleared, NDA-ready conversations</span>
                     </div>
                 </div>
             </div>
@@ -350,11 +523,23 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-mark">MKA</span>
-                        <span class="logo-text">Critical Power</span>
-                    </div>
-                    <p class="footer-tagline">We turn scattered critical infrastructure technologies into single, bankable, AI-ready ecosystems that hyperscalers, agencies, and investors can buy with confidence.</p>
+                    <a href="#" class="logo" aria-label="MKA Critical Power Home">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="46" height="46" rx="6" stroke="#0066FF" stroke-width="2"/>
+                                <path d="M26 10L20 24h6l-4 14" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="10" cy="17" r="2" fill="#0066FF" opacity="0.6"/>
+                                <circle cx="38" cy="17" r="2" fill="#0066FF" opacity="0.6"/>
+                                <circle cx="10" cy="31" r="2" fill="#0066FF" opacity="0.6"/>
+                                <circle cx="38" cy="31" r="2" fill="#0066FF" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <div class="logo-type">
+                            <span class="logo-name">MKA</span>
+                            <span class="logo-tagline">CRITICAL POWER</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc">We turn scattered critical infrastructure technologies into single, bankable, AI-ready ecosystems that hyperscalers, agencies, and investors can buy with confidence.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Navigate</h4>
@@ -373,12 +558,23 @@
                 </div>
                 <div class="footer-links">
                     <h4>Connect</h4>
-                    <a href="https://www.linkedin.com/in/michael-archie/" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="mailto:mike@mkacriticalpowers.com">Email</a>
+                    <a href="https://www.linkedin.com/in/michael-archie/" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:-2px;margin-right:6px"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="mailto:mike@mkacriticalpowers.com">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14" style="vertical-align:-2px;margin-right:6px"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Email
+                    </a>
+                    <a href="tel:3058793270">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14" style="vertical-align:-2px;margin-right:6px"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.36 1.6.68 2.35a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.75.32 1.54.55 2.35.68A2 2 0 0122 16.92z"/></svg>
+                        (305) 879-3270
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 MKA Critical Power, LLC. All rights reserved.</p>
+                <p class="footer-location">Coral Gables, Florida</p>
             </div>
         </div>
     </footer>
