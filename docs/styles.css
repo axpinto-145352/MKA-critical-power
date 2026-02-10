@@ -251,12 +251,18 @@ h2 {
 }
 
 .logo-img {
-    height: 72px;
+    height: 56px;
     width: auto;
     display: block;
-    border-radius: 6px;
-    background: #fff;
-    padding: 4px 8px;
+}
+
+.logo-name {
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--white);
+    letter-spacing: 0.03em;
+    line-height: 1.1;
+    white-space: nowrap;
 }
 
 .logo-icon svg {
@@ -1504,7 +1510,7 @@ h2 {
 }
 
 .footer-brand .logo-img {
-    height: 80px;
+    height: 64px;
 }
 
 .footer-desc {
@@ -1688,6 +1694,14 @@ h2 {
 
     .hero-badge {
         font-size: 0.7rem;
+    }
+
+    .logo-name {
+        font-size: 1.2rem;
+    }
+
+    .logo-img {
+        height: 40px;
     }
 }
 
