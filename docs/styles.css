@@ -251,9 +251,12 @@ h2 {
 }
 
 .logo-img {
-    height: 48px;
+    height: 72px;
     width: auto;
     display: block;
+    border-radius: 6px;
+    background: #fff;
+    padding: 4px 8px;
 }
 
 .logo-icon svg {
@@ -265,19 +268,6 @@ h2 {
     filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.5));
 }
 
-.logo-type {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-name {
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--white);
-    letter-spacing: 0.02em;
-    line-height: 1.2;
-    white-space: nowrap;
-}
 
 .nav-links {
     display: flex;
@@ -1511,6 +1501,10 @@ h2 {
 
 .footer-brand .logo {
     margin-bottom: 0;
+}
+
+.footer-brand .logo-img {
+    height: 80px;
 }
 
 .footer-desc {
